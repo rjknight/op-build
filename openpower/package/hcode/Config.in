@@ -4,3 +4,9 @@ config BR2_PACKAGE_HCODE
         select BR2_CPP
         help
             Project to build the hcode firmware codebase
+
+config BR2_HCODE_INCLUDE_IONV
+        bool "Enables packaging of the IONV image into the final hw image"
+        default n
+        help
+            Boolean used to flag whether to include IONV GPU binary

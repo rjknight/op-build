@@ -9,7 +9,7 @@ OPENPOWER_PNOR_SITE ?= $(call github,open-power,pnor,$(OPENPOWER_PNOR_VERSION))
 
 OPENPOWER_PNOR_LICENSE = Apache-2.0
 OPENPOWER_PNOR_LICENSE_FILES = LICENSE
-OPENPOWER_PNOR_DEPENDENCIES = hostboot hostboot-binaries machine-xml skiboot host-openpower-ffs occ capp-ucode
+OPENPOWER_PNOR_DEPENDENCIES = hostboot hostboot-binaries machine-xml skiboot host-openpower-ffs occ capp-ucode hcode
 
 ifeq ($(BR2_PACKAGE_IMA_CATALOG),y)
 OPENPOWER_PNOR_DEPENDENCIES += ima-catalog

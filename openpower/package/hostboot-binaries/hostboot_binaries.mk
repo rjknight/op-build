@@ -4,8 +4,9 @@
 #
 ################################################################################
 
-HOSTBOOT_BINARIES_VERSION ?= ed06137f062d6a716d2a89d852aac984036db256
-HOSTBOOT_BINARIES_SITE ?= $(call github,open-power,hostboot-binaries,$(HOSTBOOT_BINARIES_VERSION))
+HOSTBOOT_BINARIES_VERSION ?=63d943d3248da56f1966a859c3c7695921a338d6
+HOSTBOOT_BINARIES_SITE = /esw/san5/rjknight/hostboot-binaries
+HOSTBOOT_BINARIES_SITE_METHOD = local
 
 HOSTBOOT_BINARIES_LICENSE = Apache-2.0
 HOSTBOOT_BINARIES_LICENSE_FILES = LICENSE
@@ -23,6 +24,7 @@ define HOSTBOOT_BINARIES_INSTALL_IMAGES_CMDS
      $(INSTALL) -D $(@D)/$(BIN_FILENAME) $(STAGING_DIR)/hostboot_binaries/
      $(INSTALL) -D $(@D)/$(BR2_HOSTBOOT_BINARY_SBEC_FILENAME) $(STAGING_DIR)/hostboot_binaries/
      $(INSTALL) -D $(@D)/$(BR2_HOSTBOOT_BINARY_SBE_FILENAME)  $(STAGING_DIR)/hostboot_binaries/
+     $(INSTALL) -D $(@D)/$(BR2_HOSTBOOT_BINARY_IONV_FILENAME)  $(STAGING_DIR)/hostboot_binaries/
 endef
 
 $(eval $(generic-package))
